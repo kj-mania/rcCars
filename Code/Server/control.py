@@ -82,7 +82,7 @@ def control():
         if x == 'w':  # Move forward
             PWM.set_motor_model(2000,2000,2000,2000)
             print("Moving forward")
-        elif x == 's'  # Move backward
+        elif x == 's':  # Move backward
             PWM.set_motor_model(-2000,-2000,-2000,-2000)
             print("Moving backward")
         elif x == 'a':  # Turn left
