@@ -79,13 +79,13 @@ def control():
     PWM.set_motor_model(0, 0, 0, 0)  # Stop all motors
     while True:
         if keyboard.is_pressed('w'):  # Move forward
-            PWM.set_motor_model(4095, 4095, 4095, 4095)
+            PWM.set_motor_model(2000,2000,2000,2000)
         elif keyboard.is_pressed('s'):  # Move backward
-            PWM.set_motor_model(-4095, -4095, -4095, -4095)
+            PWM.set_motor_model(2000,2000,2000,2000)
         elif keyboard.is_pressed('a'):  # Turn left
-            PWM.set_motor_model(-4095, -4095, 4095, 4095)
+            PWM.set_motor_model(2000,2000,2000,2000)
         elif keyboard.is_pressed('d'):  # Turn right
-            PWM.set_motor_model(4095, 4095, -4095, -4095)
+            PWM.set_motor_model(2000,2000,2000,2000)
         elif keyboard.is_pressed('q'):  # Stop
             PWM.set_motor_model(0, 0, 0, 0)
         time.sleep(0.1)  # Add a small delay to avoid high CPU usage
@@ -94,9 +94,7 @@ def control():
 if __name__=='__main__':
     PWM = Ordinary_Car()          
     try:
-        while True:
-            control()
-            #Stop
+        control()
     except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
         print ("\nEnd of program")
     finally:
