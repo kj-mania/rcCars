@@ -76,7 +76,7 @@ class Ordinary_Car:
         self.pwm.close()
 
 def control():
-    PWM.set_motor_model(0, 0, 0, 0)  # Stop all motors
+  # Stop all motors
     while True:
         if keyboard.is_pressed('w'):  # Move forward
             PWM.set_motor_model(2000,2000,2000,2000)
