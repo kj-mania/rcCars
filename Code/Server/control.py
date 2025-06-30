@@ -88,7 +88,7 @@ def control():
         elif x == 'a':  # Turn left
             PWM.set_motor_model(-2000,-2000,2000,2000)
             print("Turning left")
-        elif x == 'd'  # Turn right
+        elif x == 'd':  # Turn right
             PWM.set_motor_model(2000,2000,-2000,-2000)
             print("Turning right")
         elif x == 'q':  # Stop
