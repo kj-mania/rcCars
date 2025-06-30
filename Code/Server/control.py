@@ -78,19 +78,20 @@ class Ordinary_Car:
 def control():
   # Stop all motors
     while True:
-        if keyboard.is_pressed('w'):  # Move forward
+        x = input("key:")
+        if x == 'w':  # Move forward
             PWM.set_motor_model(2000,2000,2000,2000)
             print("Moving forward")
-        elif keyboard.is_pressed('s'):  # Move backward
+        elif x == 's'  # Move backward
             PWM.set_motor_model(-2000,-2000,-2000,-2000)
             print("Moving backward")
-        elif keyboard.is_pressed('a'):  # Turn left
+        elif x == 'a':  # Turn left
             PWM.set_motor_model(-2000,-2000,2000,2000)
             print("Turning left")
-        elif keyboard.is_pressed('d'):  # Turn right
+        elif x == 'd'  # Turn right
             PWM.set_motor_model(2000,2000,-2000,-2000)
             print("Turning right")
-        elif keyboard.is_pressed('q'):  # Stop
+        elif x == 'q':  # Stop
             PWM.set_motor_model(0, 0, 0, 0)
         time.sleep(0.1)  # Add a small delay to avoid high CPU usage
 
