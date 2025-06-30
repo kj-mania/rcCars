@@ -81,23 +81,23 @@ def control():
         if x == 'w':  # Move forward
             PWM.set_motor_model(2000,2000,2000,2000)
             print("Moving forward")
-            time.sleep(2)           # Move for 2 seconds
-            PWM.set_motor_model(0, 0, 0, 0)
+            # time.sleep(2)           # Move for 2 seconds
+            # PWM.set_motor_model(0, 0, 0, 0)
         elif x == 's':  # Move backward
             PWM.set_motor_model(-2000,-2000,-2000,-2000)
             print("Moving backward")
-            time.sleep(2)           # Move for 2 seconds
-            PWM.set_motor_model(0, 0, 0, 0)
+            # time.sleep(2)           # Move for 2 seconds
+            # PWM.set_motor_model(0, 0, 0, 0)
         elif x == 'a':  # Turn left
             PWM.set_motor_model(-2000,-2000,2000,2000)
             print("Turning left")
-            time.sleep(2)           # Move for 2 seconds
-            PWM.set_motor_model(0, 0, 0, 0)
+            # time.sleep(2)           # Move for 2 seconds
+            # PWM.set_motor_model(0, 0, 0, 0)
         elif x == 'd':  # Turn right
             PWM.set_motor_model(2000,2000,-2000,-2000)
             print("Turning right")
-            time.sleep(2)           # Move for 2 seconds
-            PWM.set_motor_model(0, 0, 0, 0)
+            # time.sleep(2)           # Move for 2 seconds
+            # PWM.set_motor_model(0, 0, 0, 0)
         elif x == 'q':  # Stop
             PWM.set_motor_model(0, 0, 0, 0)
         time.sleep(0.1)  # Add a small delay to avoid high CPU usage
