@@ -102,6 +102,28 @@ def control():
             PWM.set_motor_model(0, 0, 0, 0)
         time.sleep(0.1)  # Add a small delay to avoid high CPU usage
 
+def forward(seconds):
+    PWM.set_motor_model(2000, 2000, 2000, 2000)  # Move forward
+    time.sleep(seconds)
+    PWM.set_motor_model(0, 0, 0, 0)  # Stop
+
+def backward(seconds):
+    PWM.set_motor_model(-2000, -2000, -2000, -2000)  # Move backward
+    time.sleep(seconds)
+    PWM.set_motor_model(0, 0, 0, 0)  # Stop
+
+def turn_left(seconds):
+    PWM.set_motor_model(-2000, -2000, 2000, 2000)  # Turn left
+    time.sleep(seconds)
+    PWM.set_motor_model(0, 0, 0, 0)  # Stop
+
+def turn_right(seconds):
+    PWM.set_motor_model(2000, 2000, -2000, -2000)  # Turn right
+    time.sleep(seconds)
+    PWM.set_motor_model(0, 0, 0, 0)  # Stop
+
+def driveCourse():
+    
 
 if __name__=='__main__':
     PWM = Ordinary_Car()          
