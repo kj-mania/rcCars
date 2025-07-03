@@ -122,13 +122,43 @@ def turn_right(seconds):
     time.sleep(seconds)
     PWM.set_motor_model(0, 0, 0, 0)  # Stop
 
-def driveCourse():
+def course():
+    forward(1.7)
+    turn_right(.15)
+    forward(.9)
+    turn_right(.3)
+    forward(.7)
+    turn_right(.42)
+    forward(2.5)
+    turn_left(.5)
+    forward(.8)
+    turn_left(.4)
+    forward(2.3)
+    turn_left(5)
+    
+def course1():
+    forward(1.7)
+    turn_right(.1)
+    forward(.8)
+    turn_right(.15)
+    forward(.8)
+    turn_right(.32)
+    forward(2.5)
+    turn_left(.4)
+    forward(.8)
+    turn_left(.3)
+    forward(2.3)
+    turn_left(5)
+    
+def drift(seconds):
+    PWM.set_motor_model(2000,-2000,-2000,-2000)
+    time.sleep(seconds)
     
 
 if __name__=='__main__':
     PWM = Ordinary_Car()          
     try:
-        control()
+        course()
     except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
         print ("\nEnd of program")
     finally:
